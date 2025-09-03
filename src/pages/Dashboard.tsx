@@ -101,85 +101,50 @@ export const Dashboard: React.FC = () => {
         <ApiEndpointsCard />
       </div>
 
-      {/* Databases section */}
+      {/* Recent Activity */}
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
-          <div>
-            <CardTitle className="text-xl">Your Databases</CardTitle>
-            <p className="text-sm text-muted-foreground">
-              Manage your database schemas and structures
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <Button size="sm" variant="outline">
-              <Upload className="w-4 h-4 mr-2" />
-              Upload Schema
-            </Button>
-            <Button size="sm">
-              <Plus className="w-4 h-4 mr-2" />
-              New Database
-            </Button>
-          </div>
+        <CardHeader>
+          <CardTitle className="text-xl">Recent Activity</CardTitle>
+          <p className="text-sm text-muted-foreground">
+            Latest updates and changes to your infrastructure
+          </p>
         </CardHeader>
-
         <CardContent>
-          {userDatabases.length === 0 ? (
-            <div className="text-center py-12">
-              <Database className="w-16 h-16 mx-auto text-muted-foreground/50 mb-4" />
-              <h3 className="text-lg font-semibold text-foreground mb-2">No databases yet</h3>
-              <p className="text-muted-foreground mb-6">
-                Create your first database to start managing schemas
-              </p>
-              <div className="flex gap-2 justify-center">
-                <Button>
-                  <Plus className="w-4 h-4 mr-2" />
-                  Create Database
-                </Button>
-                <Button variant="outline">
-                  <Upload className="w-4 h-4 mr-2" />
-                  Upload Schema
-                </Button>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3 p-3 border border-border rounded-lg">
+              <div className="w-2 h-2 bg-success rounded-full mt-2" />
+              <div>
+                <p className="text-sm font-medium text-foreground">
+                  Database "e-commerce" updated
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  2 minutes ago
+                </p>
               </div>
             </div>
-          ) : (
-            <div className="space-y-4">
-              {userDatabases.map((database) => (
-                <div
-                  key={database.id}
-                  className="p-4 border border-border rounded-lg hover:bg-muted/30 transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <div>
-                      <h4 className="font-semibold text-foreground">{database.name}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {database.description || 'No description'}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline">
-                        {database.tables.length} tables
-                      </Badge>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={() => navigate(`/app/visualizer/${database.id}`)}
-                      >
-                        <Eye className="w-4 h-4 mr-1" />
-                        View
-                      </Button>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Created {new Date(database.createdAt).toLocaleDateString()}</span>
-                    {user?.role === 'admin' && (
-                      <span>Owner: {database.owner}</span>
-                    )}
-                  </div>
-                </div>
-              ))}
+            <div className="flex items-start gap-3 p-3 border border-border rounded-lg">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mt-2" />
+              <div>
+                <p className="text-sm font-medium text-foreground">
+                  New API key generated
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  1 hour ago
+                </p>
+              </div>
             </div>
-          )}
+            <div className="flex items-start gap-3 p-3 border border-border rounded-lg">
+              <div className="w-2 h-2 bg-warning rounded-full mt-2" />
+              <div>
+                <p className="text-sm font-medium text-foreground">
+                  Schema validation completed
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  3 hours ago
+                </p>
+              </div>
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>

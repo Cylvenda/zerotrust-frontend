@@ -10,6 +10,7 @@ import { Landing } from "./pages/Landing";
 import { LoginForm } from "./components/auth/LoginForm";
 import { RegisterForm } from "./components/auth/RegisterForm";
 import { Dashboard } from "./pages/Dashboard";
+import { Databases } from "./pages/Databases";
 import { Visualizer } from "./pages/Visualizer";
 import { AdminUsers } from "./pages/AdminUsers";
 import { Settings } from "./pages/Settings";
@@ -46,6 +47,7 @@ const App = () => {
             }>
               <Route index element={<Dashboard />} />
               <Route path="dashboard" element={<Dashboard />} />
+              <Route path="databases" element={<Databases />} />
               <Route path="visualizer" element={<Visualizer />} />
               <Route path="visualizer/:databaseId" element={<Visualizer />} />
               <Route path="settings" element={<Settings />} />

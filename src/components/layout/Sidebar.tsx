@@ -12,6 +12,12 @@ const navigationItems = [
     roles: ['admin', 'user'],
   },
   {
+    label: 'Databases',
+    href: '/app/databases',
+    icon: Database,
+    roles: ['admin', 'user'],
+  },
+  {
     label: 'Visualizer',
     href: '/app/visualizer',
     icon: Eye,
@@ -87,7 +93,7 @@ export const Sidebar: React.FC = () => {
 
       {/* User section */}
       <div className="p-4 border-t border-border">
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
             <span className="text-white text-sm font-semibold">
               {user?.name.charAt(0).toUpperCase()}
@@ -101,17 +107,14 @@ export const Sidebar: React.FC = () => {
               {user?.role}
             </p>
           </div>
+          <button
+            onClick={handleLogout}
+            className="p-1 rounded-md hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+            title="Sign Out"
+          >
+            <LogOut className="w-4 h-4" />
+          </button>
         </div>
-        
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleLogout}
-          className="w-full justify-start"
-        >
-          <LogOut className="w-4 h-4 mr-2" />
-          Sign Out
-        </Button>
       </div>
     </div>
   );
