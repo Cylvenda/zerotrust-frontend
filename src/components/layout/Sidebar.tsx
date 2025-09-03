@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Shield, Database, Eye, Users, Settings, LogOut } from 'lucide-react';
+import { Shield, Database, Eye, Users, Settings, LogOut, Code } from 'lucide-react';
 import { useAuthStore } from '../../store/auth.store';
 import { Button } from '../ui/button';
 
@@ -21,6 +21,12 @@ const navigationItems = [
     label: 'Visualizer',
     href: '/app/visualizer',
     icon: Eye,
+    roles: ['admin', 'user'],
+  },
+  {
+    label: 'Documentation',
+    href: '/app/documentation',
+    icon: Code,
     roles: ['admin', 'user'],
   },
   {

@@ -14,6 +14,7 @@ import { Databases } from "./pages/Databases";
 import { Visualizer } from "./pages/Visualizer";
 import { AdminUsers } from "./pages/AdminUsers";
 import { Settings } from "./pages/Settings";
+import { Documentation } from "./pages/Documentation";
 import NotFound from "./pages/NotFound";
 
 // Layout and routes
@@ -50,6 +51,7 @@ const App = () => {
               <Route path="databases" element={<Databases />} />
               <Route path="visualizer" element={<Visualizer />} />
               <Route path="visualizer/:databaseId" element={<Visualizer />} />
+              <Route path="documentation" element={<Documentation />} />
               <Route path="settings" element={<Settings />} />
               
               {/* Admin only routes */}
