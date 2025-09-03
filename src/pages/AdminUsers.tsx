@@ -24,7 +24,7 @@ export const AdminUsers: React.FC = () => {
 
   const filteredUsers = users.filter(user => 
     user.status === 'active' && 
-    (user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
      user.email.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
@@ -35,7 +35,7 @@ export const AdminUsers: React.FC = () => {
     changeUserRole(userId, newRole);
     toast({
       title: 'Role Updated',
-      description: `${user.name} is now ${newRole === 'admin' ? 'an administrator' : 'a user'}.`,
+      description: `${user.username} is now ${newRole === 'admin' ? 'an administrator' : 'a user'}.`,
     });
   };
 
@@ -46,7 +46,7 @@ export const AdminUsers: React.FC = () => {
     removeUser(userId);
     toast({
       title: 'User Removed',
-      description: `${user.name} has been removed from the system.`,
+      description: `${user.username} has been removed from the system.`,
       variant: 'destructive',
     });
   };
@@ -178,12 +178,12 @@ export const AdminUsers: React.FC = () => {
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-brand rounded-full flex items-center justify-center">
                         <span className="text-white font-semibold">
-                          {user.name.charAt(0).toUpperCase()}
+                          {user.username.charAt(0).toUpperCase()}
                         </span>
                       </div>
                       
                       <div>
-                        <h4 className="font-semibold text-foreground">{user.name}</h4>
+                        <h4 className="font-semibold text-foreground">{user.username}</h4>
                         <p className="text-sm text-muted-foreground">{user.email}</p>
                         <div className="flex items-center gap-2 mt-1">
                           {getRoleBadge(user.role)}

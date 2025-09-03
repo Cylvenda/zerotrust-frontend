@@ -27,7 +27,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Main heading */}
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 animate-fade-in-up">
-          Zero Trust
+          Zero-Trust
           <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
             Data Engine
           </span>
@@ -67,7 +67,7 @@ export const HeroSection: React.FC = () => {
           <Button
             variant="outline"
             size="lg"
-            className="px-8 py-4 text-lg font-semibold border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm"
+            className="px-8 py-4 text-lg font-semibold border-white/30 text-black dark:text-white  hover:bg-white/10 hover:border-white/50 backdrop-blur-sm"
             onClick={() => navigate('/login')}
           >
             Sign In

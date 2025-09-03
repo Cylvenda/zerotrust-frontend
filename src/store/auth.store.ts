@@ -5,7 +5,9 @@ export type Role = 'admin' | 'user';
 
 export interface AuthUser {
   id: string;
-  name: string;
+  first_name: string;
+  last_name: string;
+  username: string;
   email: string;
   role: Role;
 }

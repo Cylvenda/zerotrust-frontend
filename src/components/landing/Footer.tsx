@@ -40,10 +40,10 @@ export const Footer: React.FC = () => {
               <div className="p-2 bg-brand-primary rounded-lg">
                 <Shield className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold">Zero Trust Data Engine</span>
+              <span className="text-xl font-bold">Zero-Trust Data Engine</span>
             </div>
             <p className="text-background/80 leading-relaxed mb-6">
-              Secure, scalable database schema management with blockchain-backed storage. 
+              Secure, scalable database schema management with blockchain-backed storage.
               Build the future of data with confidence.
             </p>
             <div className="flex gap-4">
@@ -85,9 +85,10 @@ export const Footer: React.FC = () => {
         {/* Bottom section */}
         <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-background/70 text-sm">
-            © 2024 Zero Trust Data Engine. All rights reserved.
+            <p className={"mt-10"}>Developed and maintained by eGA-RIDC. Copyright
+              © {new Date().getFullYear()} eGA-RIDC</p>
           </div>
-          
+
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <div className="flex items-center gap-2 text-success text-sm">
               <div className="w-2 h-2 bg-success rounded-full animate-pulse" />

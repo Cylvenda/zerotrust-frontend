@@ -40,7 +40,7 @@ export const LoginForm: React.FC = () => {
         <CardHeader className="text-center space-y-2">
           <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
           <p className="text-muted-foreground">
-            Sign in to your Zero Trust Data Engine account
+            Sign in to your Zero-Trust Data Engine account
           </p>
         </CardHeader>
         

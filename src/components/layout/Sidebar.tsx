@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Shield, Database, Eye, Users, Settings, LogOut, Code } from 'lucide-react';
+import { Shield, Database, Eye, Users, Settings, LogOut, Code, LayoutDashboardIcon } from 'lucide-react';
 import { useAuthStore } from '../../store/auth.store';
 import { Button } from '../ui/button';
 
@@ -8,7 +8,7 @@ const navigationItems = [
   {
     label: 'Dashboard',
     href: '/app/dashboard',
-    icon: Database,
+    icon: LayoutDashboardIcon,
     roles: ['admin', 'user'],
   },
   {
@@ -65,7 +65,7 @@ export const Sidebar: React.FC = () => {
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-foreground">Zero Trust</h1>
+            <h1 className="text-lg font-bold text-foreground">Zero-Trust</h1>
             <p className="text-xs text-muted-foreground">Data Engine</p>
           </div>
         </div>
@@ -102,12 +102,12 @@ export const Sidebar: React.FC = () => {
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
             <span className="text-white text-sm font-semibold">
-              {user?.name.charAt(0).toUpperCase()}
+              {user?.username.charAt(0).toUpperCase()}
             </span>
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium text-foreground truncate">
-              {user?.name}
+              {user?.username}
             </p>
             <p className="text-xs text-muted-foreground capitalize">
               {user?.role}

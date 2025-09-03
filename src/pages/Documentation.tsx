@@ -26,7 +26,7 @@ export const Documentation: React.FC = () => {
       description: 'Create a new database with schema definition',
       method: 'POST',
       endpoint: '/api/v1/databases',
-      code: `curl -X POST "https://api.zerotrust.dev/v1/databases" \\
+      code: `curl -X POST "https://api.zerotrust.tz/v1/databases" \\
   -H "Authorization: Bearer ${apiKey}" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -49,7 +49,7 @@ export const Documentation: React.FC = () => {
   "id": "db_123456789",
   "name": "my_database",
   "status": "created",
-  "endpoint": "https://db_123456789.zerotrust.dev",
+  "endpoint": "https://db_123456789.zerotrust.tz",
   "created_at": "2024-01-15T10:30:00Z"
 }`
     },
@@ -58,7 +58,7 @@ export const Documentation: React.FC = () => {
       description: 'Retrieve the complete schema of a database',
       method: 'GET',
       endpoint: '/api/v1/databases/{id}/schema',
-      code: `curl -X GET "https://api.zerotrust.dev/v1/databases/db_123456789/schema" \\
+      code: `curl -X GET "https://api.zerotrust.tz/v1/databases/db_123456789/schema" \\
   -H "Authorization: Bearer ${apiKey}"`,
       response: `{
   "database_id": "db_123456789",
@@ -89,7 +89,7 @@ export const Documentation: React.FC = () => {
       description: 'Add a new table to an existing database',
       method: 'POST',
       endpoint: '/api/v1/databases/{id}/tables',
-      code: `curl -X POST "https://api.zerotrust.dev/v1/databases/db_123456789/tables" \\
+      code: `curl -X POST "https://api.zerotrust.tz/v1/databases/db_123456789/tables" \\
   -H "Authorization: Bearer ${apiKey}" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -272,74 +272,7 @@ export const Documentation: React.FC = () => {
         </CardContent>
       </Card>
 
-      {/* SDK and Libraries */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>JavaScript SDK</CardTitle>
-            <CardDescription>
-              Official SDK for Node.js and browser applications
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="bg-muted rounded-lg p-4">
-              <code className="text-sm">npm install @zerotrust/sdk</code>
-            </div>
-            <div className="bg-muted rounded-lg p-4 overflow-x-auto">
-              <pre className="text-sm">
-                <code>{`import { ZeroTrust } from '@zerotrust/sdk';
 
-const zt = new ZeroTrust('${apiKey}');
-
-// Create database
-const db = await zt.createDatabase({
-  name: 'my_app',
-  schema: { tables: [...] }
-});
-
-// Add table
-await db.addTable({
-  name: 'users',
-  columns: [...]
-});`}</code>
-              </pre>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Python SDK</CardTitle>
-            <CardDescription>
-              Official SDK for Python applications
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="bg-muted rounded-lg p-4">
-              <code className="text-sm">pip install zerotrust-python</code>
-            </div>
-            <div className="bg-muted rounded-lg p-4 overflow-x-auto">
-              <pre className="text-sm">
-                <code>{`from zerotrust import ZeroTrust
-
-zt = ZeroTrust('${apiKey}')
-
-# Create database
-db = zt.create_database(
-    name='my_app',
-    schema={'tables': [...]}
-)
-
-# Add table
-db.add_table(
-    name='users',
-    columns=[...]
-)`}</code>
-              </pre>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
 
       {/* Best Practices */}
       <Card>

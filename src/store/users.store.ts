@@ -22,7 +22,9 @@ export const useUsersStore = create<UsersState>((set) => ({
   users: [
     {
       id: 'admin',
-      name: 'Admin User',
+      first_name: 'Admin',
+      last_name: 'test',
+      username: 'usertest',
       email: 'admin@zerotrust.dev',
       role: 'admin',
       status: 'active',
@@ -31,7 +33,9 @@ export const useUsersStore = create<UsersState>((set) => ({
     },
     {
       id: 'user1',
-      name: 'John Developer',
+      first_name: 'John',
+      last_name: 'Developer',
+      username: 'usertest01',
       email: 'john@company.com',
       role: 'user',
       status: 'active',
@@ -40,7 +44,9 @@ export const useUsersStore = create<UsersState>((set) => ({
     },
     {
       id: 'user2',
-      name: 'Sarah Designer',
+      first_name: 'Sarah Designer',
+      last_name: 'Designer',
+      username: 'usertest02',
       email: 'sarah@company.com',
       role: 'user',
       status: 'active',
@@ -49,35 +55,35 @@ export const useUsersStore = create<UsersState>((set) => ({
     },
   ],
   loading: false,
-  
+
   addUser: (user) =>
     set((state) => ({ users: [...state.users, user] })),
-    
+
   updateUser: (id, updates) =>
     set((state) => ({
       users: state.users.map((user) =>
         user.id === id ? { ...user, ...updates } : user
       ),
     })),
-    
+
   removeUser: (id) =>
     set((state) => ({
       users: state.users.map((user) =>
         user.id === id ? { ...user, status: 'removed' as const } : user
       ),
     })),
-    
+
   changeUserRole: (id, role) =>
     set((state) => ({
       users: state.users.map((user) =>
         user.id === id ? { ...user, role } : user
       ),
     })),
-    
+
   resetUserPassword: (id) => {
     // Mock password reset - in real app this would trigger email
     console.log(`Password reset initiated for user ${id}`);
   },
-  
+
   setLoading: (loading) => set({ loading }),
 }));

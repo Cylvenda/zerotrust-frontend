@@ -10,8 +10,8 @@ const api = axios.create({
 
 // Mock data for demonstration
 const mockUsers = [
-  { id: 'admin', email: 'admin@zerotrust.dev', name: 'Admin User', role: 'admin' as const },
-  { id: 'user1', email: 'john@company.com', name: 'John Developer', role: 'user' as const },
+  { id: 'admin', email: 'admin@zerotrust.dev', first_name: 'Admin', last_name: 'user', username: 'test0001', role: 'admin' as const },
+  { id: 'user1', email: 'john@company.com', first_name: 'John', last_name: 'Developer', username: 'test0002', role: 'user' as const },
 ];
 
 // Auth API
@@ -28,7 +28,7 @@ export const authApi = {
     return user;
   },
   
-  register: async (name: string, email: string, password: string): Promise<AuthUser> => {
+  register: async (first_name: string, last_name: string, username: string, email: string, password: string): Promise<AuthUser> => {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 1200));
     
@@ -38,7 +38,9 @@ export const authApi = {
     
     const newUser: AuthUser = {
       id: Math.random().toString(36).substring(7),
-      name,
+      first_name,
+      last_name,
+      username,
       email,
       role: 'user',
     };
