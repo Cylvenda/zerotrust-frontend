@@ -26,7 +26,7 @@ export const LoginForm: React.FC = () => {
     try {
       const user = await authApi.login(email, password);
       login(user);
-      navigate('/dashboard');
+      navigate('/app');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Login failed');
     } finally {

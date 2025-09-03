@@ -162,7 +162,7 @@ export const Dashboard: React.FC = () => {
                       <Button
                         size="sm"
                         variant="outline"
-                        onClick={() => navigate(`/visualizer/${database.id}`)}
+                        onClick={() => navigate(`/app/visualizer/${database.id}`)}
                       >
                         <Eye className="w-4 h-4 mr-1" />
                         View

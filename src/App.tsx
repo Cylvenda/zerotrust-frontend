@@ -38,12 +38,13 @@ const App = () => {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             
-            {/* Protected routes */}
-            <Route path="/" element={
+            {/* Protected app routes - using /app prefix to avoid conflicts */}
+            <Route path="/app" element={
               <ProtectedRoute>
                 <AppLayout />
               </ProtectedRoute>
             }>
+              <Route index element={<Dashboard />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="visualizer" element={<Visualizer />} />
               <Route path="visualizer/:databaseId" element={<Visualizer />} />

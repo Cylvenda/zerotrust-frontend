@@ -7,25 +7,25 @@ import { Button } from '../ui/button';
 const navigationItems = [
   {
     label: 'Dashboard',
-    href: '/dashboard',
+    href: '/app/dashboard',
     icon: Database,
     roles: ['admin', 'user'],
   },
   {
     label: 'Visualizer',
-    href: '/visualizer',
+    href: '/app/visualizer',
     icon: Eye,
     roles: ['admin', 'user'],
   },
   {
     label: 'Users',
-    href: '/admin/users',
+    href: '/app/admin/users',
     icon: Users,
     roles: ['admin'],
   },
   {
     label: 'Settings',
-    href: '/settings',
+    href: '/app/settings',
     icon: Settings,
     roles: ['admin', 'user'],
   },

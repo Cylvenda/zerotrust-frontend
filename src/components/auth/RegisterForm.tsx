@@ -34,7 +34,7 @@ export const RegisterForm: React.FC = () => {
     try {
       const user = await authApi.register(name, email, password);
       login(user);
-      navigate('/dashboard');
+      navigate('/app');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Registration failed');
     } finally {
