@@ -176,11 +176,11 @@ export const AdminUsers: React.FC = () => {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-brand rounded-full flex items-center justify-center">
-                        <span className="text-white font-semibold">
-                          {user.username.charAt(0).toUpperCase()}
-                        </span>
-                      </div>
+                       <div className="w-12 h-12 bg-gradient-brand rounded-full flex items-center justify-center">
+                         <span className="text-white font-semibold">
+                           {user.username?.charAt(0)?.toUpperCase() || 'U'}
+                         </span>
+                       </div>
                       
                       <div>
                         <h4 className="font-semibold text-foreground">{user.username}</h4>

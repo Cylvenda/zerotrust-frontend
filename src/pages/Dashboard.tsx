@@ -30,7 +30,7 @@ export const Dashboard: React.FC = () => {
       {/* Welcome section */}
       <div>
         <h1 className="text-3xl font-bold text-foreground mb-2">
-          Welcome back, {user?.name}
+          Welcome back, {user?.username}
         </h1>
         <p className="text-muted-foreground">
           Manage your database schemas and monitor your Zero Trust infrastructure.

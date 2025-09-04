@@ -29,7 +29,7 @@ export const Settings: React.FC = () => {
   const { theme } = useThemeStore();
   
   const [profile, setProfile] = useState({
-    name: user?.name || '',
+    name: `${user?.first_name || ''} ${user?.last_name || ''}`.trim(),
     email: user?.email || '',
   });
   
